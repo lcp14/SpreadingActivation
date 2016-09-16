@@ -18,6 +18,9 @@ def vCaracteristicas(g):
     caracteristicasVerticesGrau = g.indegree(g.vs()) + g.outdegree(g.vs())
     caracteristicasVerticesPageRank = g.personalized_pagerank(g.vs())
 
+    g.vs['pagerank'] = caracteristicasVerticesPageRank
+    g.vs['grau'] = caracteristicasVerticesGrau
+
     indicesGrau = [v.index for v in g.vs()]
     indicesPageRank = [v.index for v in g.vs()]
 
